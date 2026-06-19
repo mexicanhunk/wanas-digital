@@ -1,5 +1,6 @@
 dist/
 node_modules/
+.omc/
 .ds-build-meta.json
 ds-bundle/
 .sync-diff.json
