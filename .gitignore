@@ -4,3 +4,7 @@ node_modules/
 .ds-build-meta.json
 ds-bundle/
 .sync-diff.json
+.ds-sync/
+.design-sync/.cache/
+.design-sync/learnings/
+.design-sync/node_modules

@@ -1,0 +1,6 @@
+{
+  "projectId": "7e20b236-c044-405b-b478-b7cd404bbd62",
+  "shape": "package",
+  "pkg": "wanas-ui",
+  "cssEntry": "dist/wanas.css"
+}
