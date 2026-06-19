@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Button } from '../Button';
+import React, { useEffect } from "react";
+import { Button } from "../Button";
 
 export interface NavbarProps {
   links: { label: string; href: string }[];
@@ -8,16 +8,21 @@ export interface NavbarProps {
   onSignIn?: () => void;
 }
 
-export function Navbar({ links, cartCount, onCartClick, onSignIn }: NavbarProps) {
+export function Navbar({
+  links,
+  cartCount,
+  onCartClick,
+  onSignIn,
+}: NavbarProps) {
   useEffect(() => {
     if (
-      typeof document !== 'undefined' &&
+      typeof document !== "undefined" &&
       !document.querySelector('link[href*="fontshare"]')
     ) {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
       link.href =
-        'https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=boska@500,700&display=swap';
+        "https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=boska@500,700&display=swap";
       document.head.appendChild(link);
     }
   }, []);

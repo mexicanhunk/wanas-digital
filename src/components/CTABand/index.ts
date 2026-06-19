@@ -1,2 +1,2 @@
-export { CTABand } from './CTABand';
-export type { CTABandProps } from './CTABand';
+export { CTABand } from "./CTABand";
+export type { CTABandProps } from "./CTABand";

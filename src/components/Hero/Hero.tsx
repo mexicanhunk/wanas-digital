@@ -1,7 +1,7 @@
-import React from 'react';
-import { Eyebrow } from '../Eyebrow';
-import { Button } from '../Button';
-import { TrustBar } from '../TrustBar';
+import React from "react";
+import { Eyebrow } from "../Eyebrow";
+import { Button } from "../Button";
+import { TrustBar } from "../TrustBar";
 
 export interface HeroProps {
   eyebrow?: string;

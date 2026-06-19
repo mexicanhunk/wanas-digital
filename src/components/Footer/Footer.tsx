@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export interface FooterProps {
   links?: { label: string; href: string }[];
