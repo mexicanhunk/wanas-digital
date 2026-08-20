@@ -321,6 +321,15 @@
   line-height: 1.6;
 }
 
+.wd-cta-band .wd-btn--primary {
+  background: var(--wd-bg);
+  color: var(--wd-primary);
+}
+
+.wd-cta-band .wd-btn--primary:hover {
+  background: #fff;
+}
+
 /* ---- Navbar ---- */
 .wd-navbar {
   position: sticky;
