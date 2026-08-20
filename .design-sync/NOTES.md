@@ -1,9 +1,19 @@
 # design-sync notes
 
-## Known render warns
+## Fonts
 
-- `[FONT_MISSING] "Satoshi", "Boska"` — false positive. `src/styles/wanas.css` loads both via `@import url("https://api.fontshare.com/v2/css?...")`, a real remote font host. The validator's remote-host regex only recognizes `fonts.googleapis`/`fonts.gstatic`/`use.typekit`/`fonts.bunny`, so fontshare.com isn't whitelisted and it downgrades to a warning instead of `[FONT_REMOTE]`. Confirmed with user 2026-06-20 — accepted as-is, fonts load at runtime from fontshare's CDN. No local woff2 needed.
+`src/styles/wanas.css` now loads Fraunces + Inter via Google Fonts
+(`fonts.googleapis.com`), which the render validator whitelists directly —
+no more `[FONT_MISSING]` warning. (Previously loaded Satoshi/Boska from
+Fontshare, which the validator's remote-host regex didn't recognize; that
+warning no longer applies since the 2026-08-20 palette/type refresh away
+from Fontshare fonts.)
 
-## Re-sync risks
+## Product images
 
-- If `api.fontshare.com` ever goes away or the @import is removed from `wanas.css`, Satoshi/Boska will silently fall back to system fonts in every rendered design — nothing will flag this since it's accepted as a known warn.
+`ProductCard` now accepts an optional `image: { src, alt }` prop
+(`.wd-product-card__media`, 4:3, object-fit: cover, rounded top corners).
+Preview cards (`Default`, `NoBadge`) reference placeholder paths under
+`/products/*.jpg` — swap for real generated/uploaded product art before
+next design-sync. `NoImage` preview shows the graceful fallback when a
+product has no art yet.
