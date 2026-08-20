@@ -45,4 +45,20 @@ describe("ProductCard", () => {
       "/shop",
     );
   });
+
+  it("renders image when provided", () => {
+    render(
+      <ProductCard
+        {...baseProps}
+        image={{ src: "/cover.jpg", alt: "30-Day AI Playbook cover" }}
+      />,
+    );
+    const img = screen.getByRole("img", { name: "30-Day AI Playbook cover" });
+    expect(img).toHaveAttribute("src", "/cover.jpg");
+  });
+
+  it("omits media block when no image provided", () => {
+    const { container } = render(<ProductCard {...baseProps} />);
+    expect(container.querySelector(".wd-product-card__media")).toBeNull();
+  });
 });

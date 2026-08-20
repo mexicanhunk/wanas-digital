@@ -6,6 +6,7 @@ import type { PriceProps } from "../Price";
 import { Button } from "../Button";
 
 export interface ProductCardProps {
+  image?: { src: string; alt: string };
   badge?: { variant?: BadgeProps["variant"]; label: string };
   title: string;
   price: PriceProps;
@@ -15,6 +16,7 @@ export interface ProductCardProps {
 }
 
 export function ProductCard({
+  image,
   badge,
   title,
   price,
@@ -24,6 +26,11 @@ export function ProductCard({
 }: ProductCardProps) {
   return (
     <div className="wd-product-card">
+      {image && (
+        <div className="wd-product-card__media">
+          <img src={image.src} alt={image.alt} loading="lazy" />
+        </div>
+      )}
       <div className="wd-product-card__body">
         {badge && <Badge variant={badge.variant}>{badge.label}</Badge>}
         <h3>{title}</h3>
