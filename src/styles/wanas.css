@@ -225,7 +225,7 @@
 }
 
 .wd-product-card__media {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
   background: var(--wd-surface-2);
 }
